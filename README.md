@@ -1,2 +1,2 @@
 # user-traffic-stats
-An php library for get users traffic stats daily and total 
+An php package for get users traffic stats daily and total  
