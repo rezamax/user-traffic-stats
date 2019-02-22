@@ -6,7 +6,7 @@
  * Time: 04:25 PM
  */
 
-namespace Uts;
+namespace Uts\UtsClass;
 
 class UtsClass
 {
