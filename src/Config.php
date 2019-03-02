@@ -14,10 +14,10 @@ class Config
    /*
     * database connect config
     */
-   protected $NAME = "your db name";
+   public $NAME = "your db name";
 
-   protected $USERNAME = "your user name";
+   public $USERNAME = "your user name";
 
-   protected $PASSWORD = "your password";
+   public $PASSWORD = "your password";
 
 }

@@ -5,37 +5,21 @@
  * Date: 22/02/2019
  * Time: 02:10 PM
  */
-
 namespace Uts\DataBase;
-
-
+use Uts\Config;
 class DataBase
 {
-    /**
-     * database name
-     * @var  string
-     */
-    protected $NAME ;
-
-
-    /**
-     * database username
-     * @var  string
-     */
-    protected $USERNAME ;
-
-
-    /**
-     * database password
-     * @var  string
-     */
-    protected $PASSWORD ;
-
-
-
-    public function connect()
+    public $connect;
+    public function __construct()
     {
-        return $pdo = new \PDO("mysql:host=localhost;dbname:$this->NAME",$this->USERNAME,$this->PASSWORD);
+         $config = new Config\Config();
+         $this->connect = $pdo = new \PDO("mysql:host=localhost;dbname:$config->NAME",$config->USERNAME,$config->PASSWORD);
+    }
+
+    public function query($query)
+    {
+        $result = $this->connect->query("$query")->fetch();
+        return $result;
     }
 
 
