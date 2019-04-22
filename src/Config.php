@@ -6,7 +6,7 @@
  * Time: 02:43 PM
  */
 
-namespace Uts\Config;
+namespace Uts;
 
 
 class Config
@@ -14,10 +14,10 @@ class Config
    /*
     * database connect config
     */
-   public $NAME = "your db name";
+   public $NAME ="ust"; //"your db name";
 
-   public $USERNAME = "your user name";
+   public $USERNAME ="root"; //"your user name";
 
-   public $PASSWORD = "your password";
+   public $PASSWORD = "";//"your password";
 
 }
