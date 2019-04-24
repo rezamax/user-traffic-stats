@@ -14,10 +14,10 @@ class Config
    /*
     * database connect config
     */
-   public $NAME ="ust"; //"your db name";
+   public $NAME ="uts"; //"your db name";
 
-   public $USERNAME ="root"; //"your user name";
+   public $USERNAME ="root"; //"your ab user name";
 
-   public $PASSWORD = "";//"your password";
+   public $PASSWORD = "";//"your ab password";
 
 }

@@ -20,6 +20,27 @@ class DataBase
          $config = new Config();
          $this->connect = new \PDO("mysql:host=localhost;dbname=$config->NAME",$config->USERNAME,$config->PASSWORD);
          $this->connect->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+         $this->query("CREATE TABLE IF NOT EXISTS user_day_stats (
+            id     INT AUTO_INCREMENT PRIMARY KEY,
+            user_id     INT (11)        NOT NULL,
+            view_count  INT (11)                NOT NULL,
+            date    DATE                 NOT NULL
+          );");
+
+         $this->query("CREATE TABLE IF NOT EXISTS user_total_stats (
+            id     INT AUTO_INCREMENT PRIMARY KEY,
+            user_id     INT (11)        NOT NULL,
+            view_count  INT (11)                NOT NULL,
+            start_date    DATE                 NOT NULL
+          );");
+
+        $this->query("CREATE TABLE IF NOT EXISTS day_stats (
+            id     INT AUTO_INCREMENT PRIMARY KEY,
+            view_count  INT (11)                NOT NULL,
+            date    DATE                 NOT NULL
+          );");
+
     }
 
     public function query($query)
@@ -34,7 +55,4 @@ class DataBase
          }
 
     }
-
-
-
 }
