@@ -7,7 +7,7 @@
  */
 
 namespace Uts;
-
+require '..\vendor\autoload.php';
 
 class UserDayStats
 {
