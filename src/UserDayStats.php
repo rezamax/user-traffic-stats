@@ -8,8 +8,26 @@
 
 namespace Uts;
 require '..\vendor\autoload.php';
-
-class UserDayStats
+use Uts\Interfaces\UserDayStatsInterface;
+class UserDayStats implements UserDayStatsInterface
 {
+   public function setUserId()
+   {
+       // TODO: Implement setUserId() method.
+   }
 
+   public function findUser()
+   {
+       // TODO: Implement findUser() method.
+   }
+
+   public function enterNewViewCount()
+   {
+       // TODO: Implement enterNewViewCount() method.
+   }
+
+   public function getUserViewCount()
+   {
+       // TODO: Implement getUserViewCount() method.
+   }
 }
