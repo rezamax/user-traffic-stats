@@ -9,21 +9,30 @@
 namespace Uts;
 require '..\vendor\autoload.php';
 use Uts\Interfaces\UserDayStatsInterface;
+use Uts\Repository\UserDayStatsRepository;
 class UserDayStats implements UserDayStatsInterface
 {
-   public function setUserId()
+   public $user_id;
+   public $user_day_stats;
+   public function setUserId($id)
    {
-       // TODO: Implement setUserId() method.
+       $this->user_id = $id;
    }
+
+    public function getUserId()
+    {
+        return $this->user_id ;
+    }
 
    public function findUser()
    {
-       // TODO: Implement findUser() method.
+       $repository = new UserDayStatsRepository();
+       return $this->user_day_stats = $repository->findByUserId($this->user_id);
    }
 
    public function enterNewViewCount()
    {
-       // TODO: Implement enterNewViewCount() method.
+
    }
 
    public function getUserViewCount()

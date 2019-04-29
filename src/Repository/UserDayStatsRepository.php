@@ -33,10 +33,35 @@ class UserDayStatsRepository implements UserDayStatsRepositoryInterface
     public function findByDate($date)
     {
         $results = $this->db->query("SELECT * FROM user_day_stats");
-        foreach ($results as $result){
-            if ($result->date == $date){
-               return $result;
+        if(count($results)>0) {
+            foreach ($results as $result) {
+                if ($result->date == $date) {
+                    return $result;
+                }
             }
+        }else{
+            return null;
         }
+    }
+    public function findUserStatsByDate($user_id, $date)
+    {
+        $results = $this->db->query("SELECT * FROM user_day_stats WHERE user_id=$user_id");
+        if(count($results)>0){
+            foreach ($results as $result){
+                if ($result->date == $date){
+                    return $result;
+                }
+            }
+        }else{
+            return null;
+        }
+    }
+    public function insertNew()
+    {
+
+    }
+    public function updateCount($date)
+    {
+        // TODO: Implement updateCount() method.
     }
 }

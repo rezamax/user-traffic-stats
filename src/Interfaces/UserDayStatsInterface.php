@@ -7,7 +7,8 @@
  */
 namespace Uts\Interfaces;
 interface UserDayStatsInterface{
-    public function setUserId();
+    public function setUserId($id);
+    public function getUserId();
     public function findUser();
     public function enterNewViewCount();
     public function getUserViewCount();
