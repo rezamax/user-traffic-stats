@@ -56,12 +56,14 @@ class UserDayStatsRepository implements UserDayStatsRepositoryInterface
             return null;
         }
     }
-    public function insertNew()
+    public function insertNew($user_id,$date)
     {
-
+        $results = $this->db->query("INSERT INTO user_day_stats  VALUES ('',$user_id,1,$date)");
+        return $results;
     }
-    public function updateCount($date)
+    public function updateCount($id)
     {
-        // TODO: Implement updateCount() method.
+        $results = $this->db->query("UPDATE user_day_stats SET view_count=+1 WHERE id=$id") ;
+        return $results;
     }
 }
