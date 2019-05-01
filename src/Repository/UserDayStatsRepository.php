@@ -58,7 +58,7 @@ class UserDayStatsRepository implements UserDayStatsRepositoryInterface
     }
     public function insertNew($user_id,$date)
     {
-        $results = $this->db->query("INSERT INTO user_day_stats  VALUES ('',$user_id,1,$date)");
+        $results = $this->db->query("INSERT INTO user_day_stats  VALUES ('',$user_id,1, NOW())");
         return $results;
     }
     public function updateCount($id)

@@ -20,6 +20,14 @@ class UnitTest extends TestCase
         $this->assertEquals($id,$user_day->getUserId());
     }
 
+    public function testEnterNewViewCount()
+    {
+        $user_day = new UserDayStats();
+        $id = 1;
+        $user_day->setUserId($id);
+        $user_day->enterNewViewCount();
+    }
+
     public function testFindUserById()
     {
         $user_day = new UserDayStats();
@@ -37,6 +45,7 @@ class UnitTest extends TestCase
         }
         $this->assertTrue($result);
     }
+
 
 
 }
