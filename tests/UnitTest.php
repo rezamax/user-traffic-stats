@@ -23,9 +23,20 @@ class UnitTest extends TestCase
     public function testEnterNewViewCount()
     {
         $user_day = new UserDayStats();
-        $id = 1;
+        $id = rand(25000,120000);
         $user_day->setUserId($id);
-        $user_day->enterNewViewCount();
+        $results = [];
+        $results []= $user_day->enterNewViewCount();
+        if(count($results)>1) {
+            foreach ($results as $result) {
+                if ($result->id == $id) {
+                    $test = True;
+                }
+            }
+        }else{
+            $test = False;
+        }
+        $this->assertTrue($test);
     }
 
     public function testFindUserById()

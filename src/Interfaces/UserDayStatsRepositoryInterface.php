@@ -12,6 +12,6 @@ interface UserDayStatsRepositoryInterface{
     public function findByUserId($user_id);
     public function findByDate($date);
     public function findUserStatsByDate($user_id,$date);
-    public function insertNew($user_id,$date);
+    public function insertNew($user_id);
     public function updateCount($id);
 }
