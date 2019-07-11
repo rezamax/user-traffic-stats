@@ -6,11 +6,11 @@
  * Time: 10:03 PM
  */
 
-namespace Uts\Repository;
-use Uts\Interfaces\UserDayStatsRepositoryInterface;
+namespace Uts\Queries;
+use Uts\Interfaces\UserDayStatsQueriesInterface;
 use Uts\DataBase;
 require_once __DIR__.'..\..\..\vendor\autoload.php';
-class UserDayStatsRepository implements UserDayStatsRepositoryInterface
+class UserDayQueries implements UserDayStatsQueriesInterface
 {
     public $db;
     public function __construct()

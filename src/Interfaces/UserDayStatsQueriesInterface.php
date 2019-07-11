@@ -6,7 +6,7 @@
  * Time: 10:04 PM
  */
 namespace Uts\Interfaces;
-interface UserDayStatsRepositoryInterface{
+interface UserDayStatsQueriesInterface{
     public function all();
     public function find($id);
     public function findByUserId($user_id);
