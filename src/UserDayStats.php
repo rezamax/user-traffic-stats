@@ -14,6 +14,7 @@ class UserDayStats implements UserDayStatsInterface
 {
    public $user_id;
    public $user_day_stats;
+
    public function setUserId($id)
    {
        $this->user_id = $id;
@@ -33,10 +34,11 @@ class UserDayStats implements UserDayStatsInterface
    public function enterNewViewCount()
    {
        $exist_user_stats = new UserDayQueries();
-       if(count($exist_user_stats)){
-
+       $exist = $exist_user_stats->findUserStatsByDate($this->user_id,date("Y-m-d"));
+       if(!is_null($exist)){
+           $exist_user_stats->updateCount($exist->id);
        }else{
-
+           $exist_user_stats->insertNew($this->user_id);
        }
 
    }

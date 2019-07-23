@@ -63,7 +63,7 @@ class UserDayQueries implements UserDayStatsQueriesInterface
     }
     public function updateCount($id)
     {
-        $results = $this->db->query("UPDATE user_day_stats SET view_count=+1 WHERE id=$id") ;
+        $results = $this->db->query("UPDATE user_day_stats SET view_count= view_count+1 WHERE id=$id");
         return $results;
     }
 }
