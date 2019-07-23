@@ -66,7 +66,7 @@ class UserDayQueries implements UserDayStatsQueriesInterface
         $results = $this->db->query("UPDATE user_day_stats SET view_count= view_count+1 WHERE id=$id");
         return $results;
     }
-    public function deleteStat($id)
+    public function deleteStats($id)
     {
         $results = $this->db->query("DELETE FROM user_day_stats WHERE id=$id");
         return $results;

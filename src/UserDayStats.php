@@ -49,10 +49,10 @@ class UserDayStats implements UserDayStatsInterface
        return $exist;
    }
 
-   public function deleteStat($id)
+   public function deleteStats($id)
    {
        $stat = new UserDayQueries();
-       $stat->deleteStat($id);
+       $stat->deleteStats($id);
        return true;
    }
 }
