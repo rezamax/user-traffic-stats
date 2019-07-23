@@ -1,6 +1,6 @@
 {
     "name": "rezamax/user-traffic-stats",
-    "description": "An php package for get users traffic stats daily and total  ",
+    "description": "A php package for get users traffic stats daily and total  ",
     "keywords": [
         "league",
         "package"
