@@ -40,11 +40,12 @@ class UserDayStats implements UserDayStatsInterface
        }else{
            $exist_user_stats->insertNew($this->user_id);
        }
-
    }
 
    public function getUserViewCount()
    {
-       // TODO: Implement getUserViewCount() method.
+       $exist_user_stats = new UserDayQueries();
+       $exist = $exist_user_stats->findUserStatsByDate($this->user_id,date("Y-m-d"));
+       return $exist;
    }
 }
